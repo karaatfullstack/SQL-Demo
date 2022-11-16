@@ -17,29 +17,32 @@
  - Do \d to show your schema (which contains that database table)
  - Then do \d table_name (in this case, ` \d people ` )
  
-3. Add data
+## Adding Data
+1. Add a person to the people table
  - INSERT INTO people(name) VALUES ('Amy');
- - Show that it returns: SELECT * from people;
+   - Show that it returns: SELECT * from people;
  - INSERT INTO people(name) VALUES ('Dan');
- - Show alias: SELECT name AS friend FROM people;
+   - Show alias: SELECT name AS friend FROM people;
  
-4. Count rows
+2. Count rows of data
  - SELECT count(*) FROM people;
  - SELECT count(*) FROM people WHERE name = 'Dan';   // returns 1
-5. Drop table - start over: `DROP TABLE people`
-
- - [SHARE THIS XKCD COMIC](https://xkcd.com/327/)
+ 
+3. Drop table and make a new one
+ - start over with: `DROP TABLE people`
+ - [Share this XKCD Comic](https://xkcd.com/327/)
  - Create new table: 
-    ` CREATE TABLE people(id INTEGER PRIMARY KEY, name VARCHAR(100));  // mention primary key
+    ` CREATE TABLE people(id INTEGER PRIMARY KEY, name VARCHAR(100)); ` // mention primary key
  - INSERT INTO people(name) VALUES('Kevin');   // THIS WILL FAIL because I haven't added in an ID
- - Can put in any order as long as they match: `INSERT INTO people(name, id) VALUES('Kevin', 1);
+ - Can put in any order as long as they match: `INSERT INTO people(name, id) VALUES('Kevin', 1); `
 
-6. Serial - when you don't want to keep track of your unique IDs
+4. Serial - when you don't want to keep track of your unique IDs
     ` CREATE TABLE emails(id SERIAL PRIMARY KEY, email VARCHAR(100) UNIQUE, dept_id INTEGER); ` // Serial and Unique are both important keywords here
     ` INSERT INTO emails(email, dept_id) VALUES('billingemail.com', 2); `
     ` INSERT INTO emails(email, dept_id) VALUES('developeremail.com', 3); `
-    
-7. For JOINs, what relationship would we like to model? Let's say we have a company and want to join a departments to our emails table
+   
+## Joining tables
+1. For JOINs, what relationship would we like to model? Let's say we have a company and want to join a departments table to our emails table
  - ` CREATE TABLE departments( id SERIAL PRIMARY KEY, dept_name VARCHAR(100));
  - ` INSERT INTO departments(dept_name) VALUES('HR'); ` 
  - `  ""  "" departments(dept_name) VALUES('developers'); ` 
