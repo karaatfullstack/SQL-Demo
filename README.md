@@ -1,11 +1,11 @@
 # SQL-Demo
-## Running Postgres
+## 0 - Running Postgres
 1. Starting the DB conection in terminal (likely already done):
 `brew services start postgresql`
 2. Opening postgres connection: 
 `psql postgres`
 
-## Creating a DB and table
+## 1 - Creating a DB and table
 1. CREATE DATABASE fsa_demo
  - Show \l -> lists all DBs I've made
  - -q  -> quits the connection to the DB
@@ -17,7 +17,7 @@
  - Do \d to show your schema (which contains that database table)
  - Then do \d table_name (in this case, ` \d people ` )
  
-## Adding Data
+## 2 - Adding Data
 1. Add a person to the people table
  - INSERT INTO people(name) VALUES ('Amy');
    - Show that it returns: SELECT * from people;
@@ -41,7 +41,7 @@
     ` INSERT INTO emails(email, dept_id) VALUES('billingemail.com', 2); `
     ` INSERT INTO emails(email, dept_id) VALUES('developeremail.com', 3); `
    
-## Joining tables
+## 3 - Joining tables
 1. For JOINs, what relationship would we like to model? Let's say we have a company and want to join a departments table to our emails table
  - ` CREATE TABLE departments( id SERIAL PRIMARY KEY, dept_name VARCHAR(100));
  - ` INSERT INTO departments(dept_name) VALUES('HR'); ` 
