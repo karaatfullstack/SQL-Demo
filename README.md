@@ -57,3 +57,9 @@
  -  ` INSERT INTO employees(name, department_id) VALUES('Bea Arthur', 7);  `   // "violates key constraint" error
  [At 31 minutes](https://youtu.be/gCIblrIR-II?t=1894) 
  
+4. Successful JOIN 
+ - ` INSERT INTO employees(name, department_id) VALUES('Bea Arthur', 2);  `  // 2 is an existing ID so this will work
+ - Now add other employees: 
+ - ` INSERT INTO employees(name, department_id) VALUES('Rue McClanahan', 1);  ` 
+ - ` INSERT INTO employees(name, department_id) VALUES('Betty White', 1);  ` 
+ - ` SELECT * FROM employees JOIN departments ON departments.id = employees.department_id; `  // Will return just Bea Arthur 
