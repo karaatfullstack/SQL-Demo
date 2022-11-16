@@ -50,7 +50,10 @@
  - `  ""  "" departments(dept_name) VALUES('billing'); ` 
 
 2. Create table with a reference to the departments table
- - ` CREATE TABLE employees(id SERIAL PRIMARY KEY, name VARCHAR(100), department_id INTEGER REFERENCES departments(id)); 
+ - ` CREATE TABLE employees(id SERIAL PRIMARY KEY, name VARCHAR(100), department_id INTEGER REFERENCES departments(id)); `
    - Why do we use the "REFERENCES"? It tells the DB that there is a relation, so it will only accept department IDs which correspond to an id in the departments table! It will fail otherwise
- [At 31 minutes](https://youtu.be/gCIblrIR-II?t=1894)
+   
+3. Show INSERT fails if id doesn't match department table
+ -  ` INSERT INTO employees(name, department_id) VALUES('Bea Arthur', 7);  `   // "violates key constraint" error
+ [At 31 minutes](https://youtu.be/gCIblrIR-II?t=1894) 
  
