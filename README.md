@@ -63,3 +63,5 @@
  - ` INSERT INTO employees(name, department_id) VALUES('Rue McClanahan', 1);  ` 
  - ` INSERT INTO employees(name, department_id) VALUES('Betty White', 1);  ` 
  - ` SELECT * FROM employees JOIN departments ON departments.id = employees.department_id; `  // Will return just Bea Arthur 
+
+5. Can go on to do left, right, full outer JOIN - most common is the inner join which is displaying the inner portion of the Venn Diagram
